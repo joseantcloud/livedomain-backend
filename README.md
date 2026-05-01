@@ -1,8 +1,9 @@
 # LiveDomain Backend
 
-> Apoya este curso completo con PayPal: `https://www.paypal.com/donate/?hosted_button_id=H97LPBQYPFBXQ`
+> Apoya este curso completo:
 >
-> Tambien puedes apoyar con Buy Me a Coffee: `https://buymeacoffee.com/joseantcloud`
+> [![Donar con PayPal](https://img.shields.io/badge/Donar%20con-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=H97LPBQYPFBXQ)
+> [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a-Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/joseantcloud)
 
 ![BMW, carro de mis suenos](./bmw.jpg)
 
@@ -12,9 +13,9 @@ Hice este curso con mucho amor para ayudar a mas personas a aprender Azure, Azur
 
 Si este contenido te aporta valor, puedes apoyarlo con PayPal como opcion principal. Cada aporte me acerca a cumplir uno de mis grandes suenos: comprarme el BMW, el carro de mis suenos.
 
-Apoya el curso por PayPal aqui: `https://www.paypal.com/donate/?hosted_button_id=H97LPBQYPFBXQ`
+[![Donar con PayPal](https://img.shields.io/badge/Donar%20con-PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://www.paypal.com/donate/?hosted_button_id=H97LPBQYPFBXQ)
 
-Alternativa por Buy Me a Coffee: `https://buymeacoffee.com/joseantcloud`
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a-Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=000000)](https://buymeacoffee.com/joseantcloud)
 
 Este repositorio contiene el backend de LiveDomain. La idea es que puedas aprender, paso a paso, como una API real se ejecuta localmente, se configura por ambiente, se conecta a base de datos, guarda archivos, expone endpoints y se despliega en Azure usando Azure DevOps Pipelines.
 
