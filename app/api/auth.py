@@ -1,11 +1,16 @@
 from datetime import timedelta
 
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, Request, status
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from app.core.config import get_login_messages, settings
+from app.core.rate_limiter import (
+    login_rate_limiter,
+    password_reset_rate_limiter,
+    register_rate_limiter,
+)
 from app.core.security import (
     create_token,
     hash_password,
@@ -76,7 +81,18 @@ def get_current_user(
 
 
 @router.post("/register", response_model=MessageResponse)
-def register(payload: RegisterRequest, db: Session = Depends(get_db)):
+def register(
+    payload: RegisterRequest,
+    request: Request,
+    db: Session = Depends(get_db),
+):
+    # Rate limiting por IP
+    client_ip = request.client.host if request.client else "unknown"
+    register_rate_limiter.check_rate_limit(
+        client_ip,
+        error_message="Demasiados intentos de registro. Intenta más tarde.",
+    )
+
     existing_user = get_user_by_email(db, payload.email)
 
     if existing_user:
@@ -139,7 +155,18 @@ def verify_email(token: str, db: Session = Depends(get_db)):
 
 
 @router.post("/login", response_model=TokenResponse)
-def login(payload: LoginRequest, db: Session = Depends(get_db)):
+def login(
+    payload: LoginRequest,
+    request: Request,
+    db: Session = Depends(get_db),
+):
+    # Rate limiting por IP
+    client_ip = request.client.host if request.client else "unknown"
+    login_rate_limiter.check_rate_limit(
+        client_ip,
+        error_message="Demasiados intentos de inicio de sesión. Intenta más tarde.",
+    )
+
     user = get_user_by_email(db, payload.email)
 
     if not user:
@@ -180,7 +207,18 @@ def login(payload: LoginRequest, db: Session = Depends(get_db)):
 
 
 @router.post("/forgot-password", response_model=MessageResponse)
-def forgot_password(payload: ForgotPasswordRequest, db: Session = Depends(get_db)):
+def forgot_password(
+    payload: ForgotPasswordRequest,
+    request: Request,
+    db: Session = Depends(get_db),
+):
+    # Rate limiting por IP
+    client_ip = request.client.host if request.client else "unknown"
+    password_reset_rate_limiter.check_rate_limit(
+        client_ip,
+        error_message="Demasiados intentos de restablecimiento. Intenta más tarde.",
+    )
+
     user = get_user_by_email(db, payload.email)
 
     if user:

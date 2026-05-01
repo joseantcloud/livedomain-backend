@@ -18,6 +18,7 @@ from app.api.auth import router as auth_router
 from app.api.social import comments_router, posts_router, users_router
 from app.core.config import BACKEND_DIR, settings
 from app.db.session import Base, engine
+from app.middleware.security import SecurityHeadersMiddleware
 from app.models.social import Comment, Post, PostLike  # noqa: F401
 from app.models.user import User  # noqa: F401
 
@@ -68,26 +69,36 @@ app = FastAPI(
 )
 
 
+# Configuración de CORS más restrictiva
 allowed_origins = [
     settings.FRONTEND_BASE_URL,
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://localhost:3000",
 ]
+
+# En desarrollo, permitir localhost
+if LOCAL:
+    allowed_origins.extend([
+        "http://localhost:5173",
+        "http://localhost:5174",
+        "http://localhost:3000",
+    ])
 
 local_dev_origin_regex = None
 if LOCAL:
     local_dev_origin_regex = r"^http://(localhost|127\.0\.0\.1):\d+$"
 
 
+# Aplicar middleware de CORS antes que otros middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=allowed_origins,
     allow_origin_regex=local_dev_origin_regex,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
 )
+
+# Agregar middleware de seguridad
+app.add_middleware(SecurityHeadersMiddleware)
 
 uploads_dir = BACKEND_DIR / "uploads"
 uploads_dir.mkdir(parents=True, exist_ok=True)
