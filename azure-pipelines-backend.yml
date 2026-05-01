@@ -1,0 +1,72 @@
+trigger:
+  branches:
+    include:
+      - main
+  paths:
+    include:
+      - backend/*
+      - azure-pipelines-backend.yml
+
+variables:
+  azureServiceConnection: "REPLACE_AZURE_SERVICE_CONNECTION"
+  webAppName: "REPLACE_BACKEND_WEBAPP_NAME"
+  environmentName: "production"
+  pythonVersion: "3.12"
+
+pool:
+  vmImage: "ubuntu-latest"
+
+stages:
+  - stage: Build
+    displayName: Build backend
+    jobs:
+      - job: BuildBackend
+        displayName: Validate and package FastAPI
+        steps:
+          - task: UsePythonVersion@0
+            displayName: Use Python
+            inputs:
+              versionSpec: "$(pythonVersion)"
+
+          - script: |
+              python -m pip install --upgrade pip
+              pip install -r backend/requirements.txt
+              python -m compileall backend/app
+            displayName: Install dependencies and compile
+
+          - task: ArchiveFiles@2
+            displayName: Create backend artifact
+            inputs:
+              rootFolderOrFile: "$(Build.SourcesDirectory)/backend"
+              includeRootFolder: false
+              archiveType: "zip"
+              archiveFile: "$(Build.ArtifactStagingDirectory)/backend.zip"
+              replaceExistingArchive: true
+
+          - publish: "$(Build.ArtifactStagingDirectory)/backend.zip"
+            displayName: Publish backend artifact
+            artifact: backend
+
+  - stage: Deploy
+    displayName: Deploy backend WebApp
+    dependsOn: Build
+    jobs:
+      - deployment: DeployBackend
+        displayName: Deploy FastAPI to Azure WebApp
+        environment: "$(environmentName)"
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+                - download: current
+                  artifact: backend
+
+                - task: AzureWebApp@1
+                  displayName: Deploy backend package
+                  inputs:
+                    azureSubscription: "$(azureServiceConnection)"
+                    appType: "webAppLinux"
+                    appName: "$(webAppName)"
+                    package: "$(Pipeline.Workspace)/backend/backend.zip"
+                    runtimeStack: "PYTHON|3.12"
+                    startUpCommand: "python -m uvicorn app.main:app --host 0.0.0.0 --port 8000"
