@@ -2,6 +2,16 @@
 
 > Si este proyecto te ayuda a aprender Azure, Azure DevOps y pipelines, apoya el contenido con Buy Me a Coffee: `https://buymeacoffee.com/joseantcloud`
 
+![BMW, carro de mis suenos](./bmw.jpg)
+
+## Apoya este curso completo
+
+Hice este curso con mucho amor para ayudar a mas personas a aprender Azure, Azure DevOps, pipelines y despliegues reales paso a paso. He dedicado muchas horas a detallarlo, documentarlo y dejarlo lo mas claro posible para que puedas estudiar aunque no conozcas el proyecto desde antes.
+
+Si este contenido te aporta valor, puedes apoyarlo con Buy Me a Coffee. Cada aporte me acerca a cumplir uno de mis grandes suenos: comprarme el BMW, el carro de mis suenos.
+
+Apoya el curso aqui: `https://buymeacoffee.com/joseantcloud`
+
 Este repositorio contiene el backend de LiveDomain. La idea es que puedas aprender, paso a paso, como una API real se ejecuta localmente, se configura por ambiente, se conecta a base de datos, guarda archivos, expone endpoints y se despliega en Azure usando Azure DevOps Pipelines.
 
 No necesitas conocer el proyecto antes de empezar. Este README explica que hace cada pieza, que debes crear en Azure, que variables debes configurar, como funciona el pipeline y como validar que todo quedo funcionando.
