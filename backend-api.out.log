@@ -1,0 +1,167 @@
+INFO:     127.0.0.1:57642 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57644 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58698 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58638 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60112 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58638 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60112 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51247 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55842 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55842 - "POST /api/posts HTTP/1.1" 422 Unprocessable Content
+INFO:     127.0.0.1:64781 - "POST /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64781 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64781 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53318 - "GET /uploads/posts/26d1a4283f0545689bffa8b75ba0cbea.jpg HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "OPTIONS /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "OPTIONS /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "OPTIONS /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "OPTIONS /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62340 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54874 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54870 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64274 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64784 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57977 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64274 - "GET /api/posts/mine HTTP/1.1" 200 OK
+
+================ LIVE DOMAIN EMAIL ================
+To: wall-test-20260430174600@example.com
+Subject: Verifica tu cuenta de LiveDomain
+
+Hola,
+
+Gracias por registrarte en LiveDomain.
+
+Para verificar tu correo electrónico, abrí este enlace:
+
+http://localhost:5173/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicHVycG9zZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImV4cCI6MTc3NzY3NTU2Mn0.-XTnHMCsf_DtIXUvnD2TS5Z4_yHuKBm8twNQdpHINc8
+
+Si no creaste esta cuenta, podés ignorar este correo.
+
+LiveDomain Team
+
+===================================================
+
+INFO:     127.0.0.1:60529 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60529 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60530 - "POST /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60529 - "POST /api/posts/2/comments HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60529 - "GET /api/posts/2 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60529 - "DELETE /api/posts/2 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:60336 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60335 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60579 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60359 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58254 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64314 - "PATCH /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64314 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64314 - "GET /api/posts HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:51889 - "GET /api/posts HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:49196 - "GET /api/posts HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62841 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62841 - "GET /api/posts/mine HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61179 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59274 - "GET /api/posts/mine HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61179 - "GET /api/posts/mine HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:60895 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52031 - "GET /api/posts/mine HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:52762 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52761 - "GET /api/posts HTTP/1.1" 200 OK
+
+================ LIVE DOMAIN EMAIL ================
+To: enhancement-test-20260430175141@example.com
+Subject: Verifica tu cuenta de LiveDomain
+
+Hola,
+
+Gracias por registrarte en LiveDomain.
+
+Para verificar tu correo electrónico, abrí este enlace:
+
+http://localhost:5173/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicHVycG9zZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImV4cCI6MTc3NzY3NTkwNH0.H2UlG25mC4dvWyHQJnUiivUyIgwzwBfQvh7LZX7SG4U
+
+Si no creaste esta cuenta, podés ignorar este correo.
+
+LiveDomain Team
+
+===================================================
+
+INFO:     127.0.0.1:57194 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "PATCH /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57195 - "POST /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "POST /api/posts/2/like HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "POST /api/posts/2/like HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57194 - "DELETE /api/posts/2 HTTP/1.1" 204 No Content
+INFO:     127.0.0.1:49743 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56576 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62181 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+
+================ LIVE DOMAIN EMAIL ================
+To: account-test-20260430175417@example.com
+Subject: Verifica tu cuenta de LiveDomain
+
+Hola,
+
+Gracias por registrarte en LiveDomain.
+
+Para verificar tu correo electrónico, abrí este enlace:
+
+http://localhost:5173/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicHVycG9zZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImV4cCI6MTc3NzY3NjA1OX0.OnD8URLlmBJAxDT5K6LdyliRox3i9jyAd7hD8DdTSuc
+
+Si no creaste esta cuenta, podés ignorar este correo.
+
+LiveDomain Team
+
+===================================================
+
+INFO:     127.0.0.1:53778 - "POST /api/auth/register HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53778 - "POST /api/auth/login HTTP/1.1" 200 OK
+
+================ LIVE DOMAIN EMAIL ================
+To: account-updated-20260430175417@example.com
+Subject: Verifica tu cuenta de LiveDomain
+
+Hola,
+
+Gracias por registrarte en LiveDomain.
+
+Para verificar tu correo electrónico, abrí este enlace:
+
+http://localhost:5173/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzIiwicHVycG9zZSI6ImVtYWlsX3ZlcmlmaWNhdGlvbiIsImV4cCI6MTc3NzY3NjA2MH0.4CpTOr2-FryciRpz07K6RmNqyhIHi0mJS-OEUSPDs94
+
+Si no creaste esta cuenta, podés ignorar este correo.
+
+LiveDomain Team
+
+===================================================
+
+INFO:     127.0.0.1:53778 - "PATCH /api/users/me/email HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53778 - "PATCH /api/users/me/password HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59930 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "OPTIONS /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "OPTIONS /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "OPTIONS /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "OPTIONS /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "OPTIONS /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63292 - "GET /api/users/me/profile HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56485 - "GET /api/posts/mine HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63888 - "GET /uploads/posts/26d1a4283f0545689bffa8b75ba0cbea.jpg HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:52245 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65082 - "OPTIONS /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65082 - "GET /api/posts HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52245 - "GET /api/posts HTTP/1.1" 200 OK
